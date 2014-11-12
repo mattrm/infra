@@ -2,3 +2,5 @@
 hosted: aws
 sites_enabled:
 - wikifarm
+apt:
+- php5-apc
