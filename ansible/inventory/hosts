@@ -78,6 +78,9 @@ s135.okserver.org hosted=aws
 s033.okserver.org hosted=hetzner
 s110.okserver.org hosted=hetzner
 
+[rt]
+s136.okserver.org hosted=aws
+
 [hetzner]
 s033.okserver.org
 s110.okserver.org
