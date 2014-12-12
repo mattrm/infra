@@ -26,6 +26,11 @@
     - { role: apt-mirror-config, tags: ['apt-mirror-config'] }
     - { role: unattended-upgrades, tags: ['unattended-upgrades'] }
 
+- hosts: rt
+  sudo: true
+  roles: 
+    - { role: rt, tags: ['rt'] }
+
 - hosts: openspending-solr
   sudo: true
   roles:
