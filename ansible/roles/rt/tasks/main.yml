@@ -32,17 +32,26 @@
   command: ./configure
   args:  
     chdir: /opt/rt4
- 
-#- name: make testdeps
- # command: make testdeps
-  #args:
-   # chdir: /opt/rt4
 
 - name: configure cpan
-  command: /usr/bin/perl -MCPAN -e shell
+  command: perl -MCPAN -e 'my $c = "CPAN::HandleConfig"; $c->load(doit => 1, autoconfig => 1); $c->edit(prerequisites_policy => "follow"); $c->edit(build_requires_install_policy => "yes"); $c->commit'
   args: 
     chdir: /opt/rt4
-#-# name: make fixdeps
+  async: 3600
+  poll: 60
+
+#- name: make testdeps
+#  command: make testdeps
+#  args:
+#   chdir: /opt/rt4
+#  async: 3600
+#  poll: 60
+
+
+- name: make fixdeps
+  command: make fixdeps
+  args: 
+    chdir: /opt/rt4
 
 #- name: make install
 
