@@ -17,9 +17,6 @@
 #  - libapache2-mod-fastcgi
 
 # Install RT
- 
-#- name: create RT install directory
-#  file: state=directory path=/opt/rt4
 
 - name: get latest RT release
   get_url: url=https://download.bestpractical.com/pub/rt/release/rt-4.2.9.tar.gz dest=/opt/
@@ -57,7 +54,10 @@
   async: 360
   poll: 15
 
-#- name: make install
+- name: make install
+  command: make install
+  args:
+    chdir: /opt/rt4
 
 # We already have a DB, so no need to initialise the database
 
