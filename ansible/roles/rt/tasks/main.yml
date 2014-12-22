@@ -46,6 +46,31 @@
   args:
     chdir: /opt/rt4-install
 
+# Install plugins
+
+- name: get nagios autoclose plugin
+  get_url: url=https://github.com/bestpractical/rt-extension-nagios/archive/master.zip dest=/opt/
+
+- name: extract nagios autoclose plugin
+  unarchive: src=/opt/master.zip dest=/opt/ copy=no
+
+- name: run perl Makefile.PL for nagios autoclose
+  command: perl Makefile.PL
+  args:
+    chdir: /opt/rt-extension-nagios-master
+
+- name: run make for nagios 
+  command: make
+  args:
+    chdir: /opt/rt-extension-nagios-master
+
+- name: run make install for nagios autoclose
+  command: make install
+  args:
+    chdir: /opt/rt-extension-nagios-master
+
+
+
 # We already have a DB, so no need to initialise the database
 
 # Configure RT
@@ -56,4 +81,4 @@
 # Configure Procmail
 
 - name: configure procmail
-  copy: src=procmailrc.rt dest=/opt/rt4/etc/rt_postfix/procmailrc.rt owner=root group=root mode=0644
+  copy: src=procmailrc.rt dest=/opt/rt4/etc/procmailrc.rt owner=root group=root mode=0644
