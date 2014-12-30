@@ -50,29 +50,6 @@
   args:
     chdir: /opt/rt4-install
 
-# Install plugins
-# auto close plugin
-#- name: get nagios autoclose plugin
-#  get_url: url=https://github.com/bestpractical/rt-extension-nagios/archive/master.zip dest=/opt/
-
-#- name: extract nagios autoclose plugin
-#  unarchive: src=/opt/master dest=/opt/ copy=no
-
-#- name: run perl Makefile.PL for nagios autoclose
-#  command: perl Makefile.PL
-#  args:
-#    chdir: /opt/rt-extension-nagios-master
-
-#- name: run make for nagios 
-#  command: make
-#  args:
-#    chdir: /opt/rt-extension-nagios-master
-
-#- name: run make install for nagios autoclose
-#  command: make install
-#  args:
-#    chdir: /opt/rt-extension-nagios-master
-
 # Extra plugins
 # To add an extra plugin, just add it to the with_items below
 # Make sure you copy the format in the with items
