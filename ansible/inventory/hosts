@@ -120,6 +120,7 @@ wiki
 LOV
 labs
 listserv
+rt
 
 [dbservers:children]
 ckan-db-prod
