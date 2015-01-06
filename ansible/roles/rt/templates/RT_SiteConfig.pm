@@ -4,7 +4,11 @@ Set( $WebPath, "" );
 Set( $WebPort, 443 );
 Set( $WebDomain, "rt.okfn.org" );
 Set( $WebSecureCookies, 1 );
-Set( $DatabaseHost, 5432 );
+
+Set( $DatabaseType, "Pg" );
+Set( $DatabaseHost, "db001.cxglaymtrf0h.eu-west-1.rds.amazonaws.com" );
+Set( $DatabasePort, 5432 );
+Set( $DatabaseName, "rt4" );
 Set( $DatabasePassword, "{{ rt_database_pw }}" );
 Set( $Timezone, "UTC" );
 Set( $MaxInlineBody, 0 );
