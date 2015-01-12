@@ -9,7 +9,8 @@ Set( $DatabaseType, "Pg" );
 Set( $DatabaseHost, "db001.cxglaymtrf0h.eu-west-1.rds.amazonaws.com" );
 Set( $DatabasePort, 5432 );
 Set( $DatabaseName, "rt4" );
-Set( $DatabasePassword, "{{ rt_database_pw }}" );
+Set( $DatabaseUser, "rt_user" );
+Set( $DatabasePassword, "{{ rt_db_pass }}" );
 Set( $Timezone, "UTC" );
 Set( $MaxInlineBody, 0 );
 
