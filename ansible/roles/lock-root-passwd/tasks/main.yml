@@ -1,2 +1,4 @@
  - name: Lock root password using passwd -l
    command: /usr/bin/passwd -l root
+   tags:
+     - lock-root-passwd
