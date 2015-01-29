@@ -16,7 +16,6 @@
     - postfix
     - { role: knopki.timezone, tags: ['time'] }
     - { role: bennojoy.ntp, tags: ['time'] }
-    - { role: sysstat, tags: ['sysstat'] }
     - { role: update-notifier, tags: ['update-notifier'] }
     - { role: users, tags: ['users'] }
     - { role: sudo , tags: ['sudo'] }
