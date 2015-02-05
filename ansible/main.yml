@@ -25,10 +25,6 @@
     - { role: apt, tags: ['git'], pkg_list: ['git'] }
     - { role: apt, tags: ['sysstat'], pkg_list: ['sysstat'] }
     - { role: sshd, tags: ['sshd'] }
-    - { role: apt, tags: ['git'], pkg_list: ['git'] }
-    - { role: apt, tags: ['sysstat'], pkg_list: ['sysstat'] }
-    - { role: sshd, tags: ['sshd'] }
-
 
 - hosts: omeka
   sudo: true
