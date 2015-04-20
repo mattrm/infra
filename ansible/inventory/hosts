@@ -1,6 +1,9 @@
 [monitoring]
 s117.okserver.org hosted=aws
 
+[icinga]
+s142.okserver.org
+
 [docker-host]
 s125.okserver.org hosted=aws
 

@@ -36,6 +36,13 @@
     - { role: omeka, tags: ['omeka'] }
     - { role: nginx, tags: ['nginx'] }
 
+- hosts: icinga
+  sudo: true
+  vars_files:
+    - "{{ private_dir }}/p.yml"
+  roles:
+    - { role: icinga-server, tags: ['icinga-server'] }
+
 - hosts: rt
   sudo: true
   vars_files:

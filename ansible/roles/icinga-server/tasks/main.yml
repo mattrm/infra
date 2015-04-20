@@ -1,0 +1,37 @@
+
+- name: Add icinga PPAs
+  apt_repository: repo='ppa:formorer/icinga'
+
+- name: Add icinga-web PPA
+  apt_repository: repo='ppa:formorer/icinga-web'
+
+- name: Install icinga packages
+  apt: pkg={{ item }} state=installed update_cache=yes
+  with_items:
+  - icinga2
+  - icinga2-bin
+  - icinga2-common
+  - icinga-web
+  - icinga2-ido-mysql
+
+- name: Install icinga extra software
+  apt: pkg={{ item }} state=installed update_cache=yes
+  with_items:
+  - mysql-server
+  - python-mysqldb
+
+# Copy config files over if needed
+
+# Setup mysql database with relevant privs
+
+- name: Create mysql database
+  mysql_db: name=icinga state=present
+
+#- name: Create user for mysql database
+#  mysql_user: name=icinga password={{ icinga_db_password }} priv=icinga.* state=present
+
+#- name: Import mysql schema into database
+#  mysql_db: name=icinga state=import target=/usr/share/icinga2-ido-mysql/schema/mysql.sql
+
+# Setup the web console
+# Might be as simple as adding a nginx role
