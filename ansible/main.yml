@@ -43,6 +43,8 @@
     - "{{ private_dir }}/p.yml"
   roles:
     - { role: icinga-server, tags: ['icinga-server'] }
+    - { role: nginx, tags: ['nginx'] }
+    - { role: supervisor, tags: ['supervisor'] }
 
 - hosts: rt
   sudo: true

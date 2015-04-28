@@ -11,8 +11,11 @@
   - icinga2
   - icinga2-bin
   - icinga2-common
-  - icinga-web
+  - icingaweb2
+  - icingaweb2-module-doc
   - icinga2-ido-mysql
+  - spawn-fcgi
+  - php5-fpm
 
 - name: Install icinga extra software
   apt: pkg={{ item }} state=installed update_cache=yes

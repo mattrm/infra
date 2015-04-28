@@ -1,0 +1,6 @@
+---
+sites_enabled:
+  - icinga
+sites_to_monitor:
+  - icinga.okserver.org:80:301
+
