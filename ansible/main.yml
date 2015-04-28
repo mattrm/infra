@@ -37,6 +37,7 @@
     - { role: nginx, tags: ['nginx'] }
 
 - hosts: icinga
+  user: root
   sudo: true
   vars_files:
     - "{{ private_dir }}/p.yml"

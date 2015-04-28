@@ -1,0 +1,5 @@
+- name: import icinga schema
+  mysql_db: name=icinga state=import target=/usr/share/icinga2-ido-mysql/schema/mysql.sql
+
+- name: restart icinga2
+  service: name=icinga2 state=restarted

@@ -22,16 +22,19 @@
 
 # Copy config files over if needed
 
-# Setup mysql database with relevant privs
-
+# The handler to import the schema is only called on DB creation.
 - name: Create mysql database
   mysql_db: name=icinga state=present
+  notify: import icinga schema
 
-#- name: Create user for mysql database
-#  mysql_user: name=icinga password={{ icinga_db_password }} priv=icinga.* state=present
+- name: Create user for mysql database
+  mysql_user: name=icinga password={{ icinga_db_password }} priv=icinga.*:ALL state=present
 
-#- name: Import mysql schema into database
-#  mysql_db: name=icinga state=import target=/usr/share/icinga2-ido-mysql/schema/mysql.sql
+- name: Enable external commands from the web interface
+  command: icinga2 feature enable command
 
+- name: Enable ido-mysql in icinga2
+  command: icinga2 feature enable ido-mysql
+  notify: restart icinga2
 # Setup the web console
 # Might be as simple as adding a nginx role
