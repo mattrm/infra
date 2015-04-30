@@ -45,6 +45,7 @@
     - { role: icinga-server, tags: ['icinga-server'] }
     - { role: nginx, tags: ['nginx'] }
     - { role: supervisor, tags: ['supervisor'] }
+    - { role: php-fpm, tags: ['php-fpm'] }
 
 - hosts: rt
   sudo: true

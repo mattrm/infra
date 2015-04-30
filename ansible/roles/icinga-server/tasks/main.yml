@@ -15,6 +15,10 @@
   - icingaweb2-module-doc
   - icinga2-ido-mysql
   - spawn-fcgi
+  - imagemagick
+  - php5-imagick
+  - php5-intl
+  - php5
 
 - name: Install icinga extra software
   apt: pkg={{ item }} state=installed update_cache=yes
