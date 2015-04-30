@@ -1,12 +1,12 @@
 server {
     server_name icinga.okserver.org;
-    index /wiki/index.php;
-    root /var/www/html;
+    index index.php;
+    root /usr/share/icingaweb2/public/;
 
     access_log /var/log/nginx/icinga.access.log;
     error_log /var/log/nginx/icinga.error.log;
     location ~ ^/icingaweb2/index\.php(.*)$ {
-      fastcgi_pass 127.0.0.1:9000;
+      fastcgi_pass unix:/var/run/php5-fpm.sock;
       fastcgi_index index.php;
       include fastcgi_params;
       fastcgi_param SCRIPT_FILENAME /usr/share/icingaweb2/public/index.php;
